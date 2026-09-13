@@ -1,0 +1,8 @@
+.vercel
+node_modules
+__pycache__
+*.pyc
+dist
+research
+*.log
+lh-report.json

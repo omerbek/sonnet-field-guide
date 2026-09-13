@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://technocore-sonnet-status.vercel.app/sitemap.xml

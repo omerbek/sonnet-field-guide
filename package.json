@@ -1,0 +1,15 @@
+{
+  "name": "sonnet-field-guide",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Independent, bilingual, privacy-conscious field guide for Technocore Sonnet 2.",
+  "scripts": {
+    "build": "node scripts/build-site.js",
+    "check": "npm run build && npm test",
+    "test": "node --test",
+    "dev": "vercel dev"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
