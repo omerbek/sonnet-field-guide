@@ -57,6 +57,7 @@ async function handler(req, res) {
   res.setHeader("Cache-Control", "private, no-store, max-age=0");
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("X-Robots-Tag", "noindex, nofollow");
+  if (String(req.url || "").split("?", 1)[0].endsWith(".js")) return res.status(404).json({ error: "Not found" });
   if (req.method !== "POST") { res.setHeader("Allow", "POST"); return res.status(405).json({ error: "POST only" }); }
   try {
     const did = readDid(req);

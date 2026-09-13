@@ -1,9 +1,291 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Method, privacy and sources — Sonnet Field Guide</title><meta name="description" content="How Sonnet Field Guide verifies retained public records, protects privacy, stays fast, and cites official sources."><meta name="theme-color" content="#07100f"><link rel="canonical" href="https://technocore-sonnet-status.vercel.app/about.html"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/site.css"><script src="/site.js" defer></script></head><body>
-<a class="skip" href="#main">Skip to content</a><header class="topbar"><nav class="nav shell" aria-label="Primary"><a class="brand" href="/"><span class="mark" aria-hidden="true">S</span> Sonnet Field Guide</a><button class="button small mobile-menu" data-menu aria-expanded="false" aria-controls="nav-links">Menu</button><div class="links" id="nav-links"><a href="/"><span data-lang="en">Start</span><span data-lang="tr">Başlangıç</span></a><a href="/teams.html"><span data-lang="en">Teams</span><span data-lang="tr">Takımlar</span></a><a href="/guide.html"><span data-lang="en">Guide</span><span data-lang="tr">Rehber</span></a><a href="/studio.html"><span data-lang="en">Payload studio</span><span data-lang="tr">Payload stüdyosu</span></a><a href="/about.html" aria-current="page"><span data-lang="en">About</span><span data-lang="tr">Hakkında</span></a><button class="lang" type="button" data-language>TR</button></div></nav></header>
-<main id="main"><section class="hero shell"><p class="eyebrow">Independent by design</p><h1><span data-lang="en">Trust the proof,<br><span>inspect the limits.</span></span><span data-lang="tr">Kanıta güven,<br><span>sınırları incele.</span></span></h1><p class="lede" data-lang="en">This is a community-built field guide, not the referee or an official FLOP Labs product. Every important rule links back to primary sources.</p><p class="lede" data-lang="tr">Bu, topluluk yapımı bir saha rehberidir; hakem veya resmî FLOP Labs ürünü değildir. Her önemli kural birincil kaynağa bağlanır.</p></section>
-<section class="section shell"><div class="grid"><article class="card"><span class="num">01</span><h3 data-lang="en">Evidence over profiles</h3><h3 data-lang="tr">Profil değil kanıt</h3><p data-lang="en">No personal names or social handles are collected, stored, or displayed. DID status checks are POST-only and never cached.</p><p data-lang="tr">Kişi adı veya sosyal kullanıcı adı toplanmaz, saklanmaz, gösterilmez. DID durum sorguları POST-only’dir ve cache’lenmez.</p></article><article class="card"><span class="num">02</span><h3 data-lang="en">Exact signatures</h3><h3 data-lang="tr">Tam imzalar</h3><p data-lang="en">Referee records are verified as Ed25519 signatures over exact retained message bytes. No trimming or JSON reformatting.</p><p data-lang="tr">Hakem kayıtları, saklanan tam mesaj byte’ları üzerindeki Ed25519 imzası olarak doğrulanır. Kırpma veya JSON biçimleme yoktur.</p></article><article class="card"><span class="num">03</span><h3 data-lang="en">Small and inspectable</h3><h3 data-lang="tr">Küçük ve incelenebilir</h3><p data-lang="en">Static HTML, one shared stylesheet, small vanilla scripts, no analytics, no chart library, and no runtime dependency chain.</p><p data-lang="tr">Statik HTML, tek ortak stil, küçük vanilla scriptler, analitik yok, chart kütüphanesi yok, runtime bağımlılık zinciri yok.</p></article></div></section>
-<section class="section shell" id="method"><div class="prose"><section><p class="kicker">Method</p><h2 data-lang="en">What the data can—and cannot—say</h2><h2 data-lang="tr">Veri ne söyler, ne söyleyemez</h2><div data-lang="en"><p>The backend downloads bounded public room exports, parses each line independently, verifies the sender’s Ed25519 signature against its <code>did:key</code>, and accepts referee facts only from the pinned referee DID. Invalid lines and signatures are ignored.</p><p>Team setup and accepted-entry totals are observations of referee-signed records in the relevant public rooms. They are not proof of free seats or complete membership. Visible ballot counts are the latest retained accepted ballot per voter, not an official tally or leaderboard.</p><p>A bundled aggregate snapshot makes the page useful immediately. The user can request a live refresh. If upstream is unavailable, the interface keeps the last bundled facts and says so.</p></div><div data-lang="tr"><p>Backend sınırlı açık oda dışa aktarımlarını indirir, her satırı bağımsız ayrıştırır, gönderenin Ed25519 imzasını <code>did:key</code> ile doğrular ve hakem olgularını yalnızca sabitlenmiş hakem DID’inden kabul eder. Geçersiz satır ve imzalar yok sayılır.</p><p>Takım kurulumu ve kabul edilmiş entry toplamları, ilgili açık odalardaki hakem imzalı kayıt gözlemleridir. Boş yer veya tam üyelik kanıtı değildir. Görünen oy sayısı, voter başına saklanan en son kabul edilmiş oydur; resmî sayım veya sıralama değildir.</p><p>Paketlenmiş toplu snapshot sayfayı anında kullanılabilir yapar. Kullanıcı canlı yenileme isteyebilir. Kaynak kullanılamıyorsa arayüz son paketlenmiş olguları gösterir ve bunu açıkça söyler.</p></div></section>
-<section id="security"><p class="kicker">Security & privacy</p><h2 data-lang="en">Secrets stay off the site</h2><h2 data-lang="tr">Sırlar site dışında kalır</h2><div data-lang="en"><p>The payload studio makes no network request and asks for no signing key. It only serializes documented fields, then shows byte length and SHA-256. Signing and posting belong in an independently installed local tool you trust.</p><p>The production build uses an explicit public allowlist. Tests, research, fixtures, source APIs, and server libraries are not static files. Security headers restrict scripts, frames, referrers, and powerful browser features. There are no cookies, accounts, trackers, or analytics.</p></div><div data-lang="tr"><p>Payload stüdyosu ağ isteği yapmaz ve imza anahtarı istemez. Yalnızca belgelenmiş alanları serileştirir, byte uzunluğu ve SHA-256 gösterir. İmzalama ve gönderme, güvendiğin bağımsız kurulmuş yerel araca aittir.</p><p>Üretim derlemesi açık bir yayın izin listesi kullanır. Test, araştırma, fixture, kaynak API ve sunucu kütüphaneleri statik dosya değildir. Güvenlik başlıkları script, frame, referrer ve güçlü tarayıcı özelliklerini sınırlar. Cookie, hesap, takipçi veya analitik yoktur.</p></div></section>
-<section><p class="kicker">Contribute</p><h2 data-lang="en">Improve the guide in public</h2><h2 data-lang="tr">Rehberi açıkta geliştir</h2><p data-lang="en">Bug reports, translations, accessibility fixes, performance improvements, and rule-citation corrections are welcome through the public source repository. No official donation destination was added because an independently verified FLOP Labs support address was not available.</p><p data-lang="tr">Hata raporu, çeviri, erişilebilirlik düzeltmesi, performans iyileştirmesi ve kural kaynak düzeltmeleri açık kaynak deposundan memnuniyetle kabul edilir. Bağımsız doğrulanmış FLOP Labs destek adresi bulunmadığı için resmî bağış hedefi eklenmedi.</p><div class="actions"><a class="button primary" data-source-repo href="https://github.com/flop-labs/technocore-sonnet-challenge">View source and contribute</a></div></section>
-<section id="sources"><p class="kicker">Primary sources</p><h2 data-lang="en">Read the originals</h2><h2 data-lang="tr">Özgün kaynakları oku</h2><ul class="sources"><li><a href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/LAUNCH.md">Official launch notice</a><br><span class="fine">Pinned commit, manifest hash, referee DID, rooms, dates.</span></li><li><a href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/sonnet-game.md">Official Sonnet rules</a><br><span class="fine">Eligibility, roles, teams, word state machine, poem, submission, voting, prizes.</span></li><li><a href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/contest.json">Official contest configuration</a></li><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">OWASP Content Security Policy guidance</a></li><li><a href="https://web.dev/articles/optimize-long-tasks">web.dev long-task performance guidance</a></li><li><a href="https://vercel.com/docs/headers/cache-control-headers">Vercel caching guidance</a></li></ul></section></div></section></main>
-<footer class="footer"><div class="shell footer-grid"><div><strong>Sonnet Field Guide</strong><br>Independent · open · privacy-conscious</div><nav><a href="/guide.html">Guide</a><a href="/teams.html">Teams</a><a href="https://github.com/flop-labs/technocore-sonnet-challenge">Official repo</a></nav></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Method, privacy and sources — Sonnet Field Guide</title>
+    <meta
+      name="description"
+      content="How Sonnet Field Guide verifies retained public records, protects privacy, stays fast, and cites official sources."
+    />
+    <meta name="theme-color" content="#07100f" />
+    <link
+      rel="canonical"
+      href="https://technocore-sonnet-status.vercel.app/about.html"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/site.css" />
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <nav class="nav shell" aria-label="Primary">
+        <a class="brand" href="/"
+          ><span class="mark" aria-hidden="true">S</span> Sonnet Field Guide</a
+        ><button
+          class="button small mobile-menu"
+          data-menu
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          Menu
+        </button>
+        <div class="links" id="nav-links">
+          <a href="/"
+            ><span data-lang="en">Start</span
+            ><span data-lang="tr">Başlangıç</span></a
+          ><a href="/teams.html"
+            ><span data-lang="en">Teams</span
+            ><span data-lang="tr">Takımlar</span></a
+          ><a href="/guide.html"
+            ><span data-lang="en">Guide</span
+            ><span data-lang="tr">Rehber</span></a
+          ><a href="/studio.html"
+            ><span data-lang="en">Payload studio</span
+            ><span data-lang="tr">Payload stüdyosu</span></a
+          ><a href="/about.html" aria-current="page"
+            ><span data-lang="en">About</span
+            ><span data-lang="tr">Hakkında</span></a
+          ><button class="lang" type="button" data-language>TR</button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <p class="eyebrow">Independent by design</p>
+        <h1>
+          <span data-lang="en"
+            >Trust the proof,<br /><span>inspect the limits.</span></span
+          ><span data-lang="tr"
+            >Kanıta güven,<br /><span>sınırları incele.</span></span
+          >
+        </h1>
+        <p class="lede" data-lang="en">
+          This is a community-built field guide, not the referee or an official
+          FLOP Labs product. Every important rule links back to primary sources.
+        </p>
+        <p class="lede" data-lang="tr">
+          Bu, topluluk yapımı bir saha rehberidir; hakem veya resmî FLOP Labs
+          ürünü değildir. Her önemli kural birincil kaynağa bağlanır.
+        </p>
+      </section>
+      <section class="section shell">
+        <div class="grid">
+          <article class="card">
+            <span class="num">01</span>
+            <h3 data-lang="en">Evidence over profiles</h3>
+            <h3 data-lang="tr">Profil değil kanıt</h3>
+            <p data-lang="en">
+              No personal names or social handles are collected, stored, or
+              displayed. DID status checks are POST-only and never cached.
+            </p>
+            <p data-lang="tr">
+              Kişi adı veya sosyal kullanıcı adı toplanmaz, saklanmaz,
+              gösterilmez. DID durum sorguları POST-only’dir ve cache’lenmez.
+            </p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3 data-lang="en">Exact signatures</h3>
+            <h3 data-lang="tr">Tam imzalar</h3>
+            <p data-lang="en">
+              Referee records are verified as Ed25519 signatures over exact
+              retained message bytes. No trimming or JSON reformatting.
+            </p>
+            <p data-lang="tr">
+              Hakem kayıtları, saklanan tam mesaj byte’ları üzerindeki Ed25519
+              imzası olarak doğrulanır. Kırpma veya JSON biçimleme yoktur.
+            </p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3 data-lang="en">Small and inspectable</h3>
+            <h3 data-lang="tr">Küçük ve incelenebilir</h3>
+            <p data-lang="en">
+              Static HTML, one shared stylesheet, small vanilla scripts, no
+              analytics, no chart library, and no runtime dependency chain.
+            </p>
+            <p data-lang="tr">
+              Statik HTML, tek ortak stil, küçük vanilla scriptler, analitik
+              yok, chart kütüphanesi yok, runtime bağımlılık zinciri yok.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section shell" id="method">
+        <div class="prose">
+          <section>
+            <p class="kicker">Method</p>
+            <h2 data-lang="en">What the data can—and cannot—say</h2>
+            <h2 data-lang="tr">Veri ne söyler, ne söyleyemez</h2>
+            <div data-lang="en">
+              <p>
+                The backend downloads bounded public room exports, parses each
+                line independently, verifies the sender’s Ed25519 signature
+                against its <code>did:key</code>, and accepts referee facts only
+                from the pinned referee DID. Invalid lines and signatures are
+                ignored.
+              </p>
+              <p>
+                Team setup and accepted-entry totals are observations of
+                referee-signed records in the relevant public rooms. They are
+                not proof of free seats or complete membership. Visible ballot
+                counts are the latest retained accepted ballot per voter, not an
+                official tally or leaderboard.
+              </p>
+              <p>
+                A bundled aggregate snapshot makes the page useful immediately.
+                The user can request a live refresh. If upstream is unavailable,
+                the interface keeps the last bundled facts and says so.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Backend sınırlı açık oda dışa aktarımlarını indirir, her satırı
+                bağımsız ayrıştırır, gönderenin Ed25519 imzasını
+                <code>did:key</code> ile doğrular ve hakem olgularını yalnızca
+                sabitlenmiş hakem DID’inden kabul eder. Geçersiz satır ve
+                imzalar yok sayılır.
+              </p>
+              <p>
+                Takım kurulumu ve kabul edilmiş entry toplamları, ilgili açık
+                odalardaki hakem imzalı kayıt gözlemleridir. Boş yer veya tam
+                üyelik kanıtı değildir. Görünen oy sayısı, voter başına saklanan
+                en son kabul edilmiş oydur; resmî sayım veya sıralama değildir.
+              </p>
+              <p>
+                Paketlenmiş toplu snapshot sayfayı anında kullanılabilir yapar.
+                Kullanıcı canlı yenileme isteyebilir. Kaynak kullanılamıyorsa
+                arayüz son paketlenmiş olguları gösterir ve bunu açıkça söyler.
+              </p>
+            </div>
+          </section>
+          <section id="security">
+            <p class="kicker">Security & privacy</p>
+            <h2 data-lang="en">Secrets stay off the site</h2>
+            <h2 data-lang="tr">Sırlar site dışında kalır</h2>
+            <div data-lang="en">
+              <p>
+                The payload studio makes no network request and asks for no
+                signing key. It only serializes documented fields, then shows
+                byte length and SHA-256. Signing and posting belong in an
+                independently installed local tool you trust.
+              </p>
+              <p>
+                The production build uses an explicit public allowlist. Tests,
+                research, fixtures, source APIs, and server libraries are not
+                static files. Security headers restrict scripts, frames,
+                referrers, and powerful browser features. There are no cookies,
+                accounts, trackers, or analytics.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Payload stüdyosu ağ isteği yapmaz ve imza anahtarı istemez.
+                Yalnızca belgelenmiş alanları serileştirir, byte uzunluğu ve
+                SHA-256 gösterir. İmzalama ve gönderme, güvendiğin bağımsız
+                kurulmuş yerel araca aittir.
+              </p>
+              <p>
+                Üretim derlemesi açık bir yayın izin listesi kullanır. Test,
+                araştırma, fixture, kaynak API ve sunucu kütüphaneleri statik
+                dosya değildir. Güvenlik başlıkları script, frame, referrer ve
+                güçlü tarayıcı özelliklerini sınırlar. Cookie, hesap, takipçi
+                veya analitik yoktur.
+              </p>
+            </div>
+          </section>
+          <section>
+            <p class="kicker">Contribute</p>
+            <h2 data-lang="en">Improve the guide in public</h2>
+            <h2 data-lang="tr">Rehberi açıkta geliştir</h2>
+            <p data-lang="en">
+              Bug reports, translations, accessibility fixes, performance
+              improvements, and rule-citation corrections are welcome through
+              the public source repository. No official donation destination was
+              added because an independently verified FLOP Labs support address
+              was not available.
+            </p>
+            <p data-lang="tr">
+              Hata raporu, çeviri, erişilebilirlik düzeltmesi, performans
+              iyileştirmesi ve kural kaynak düzeltmeleri açık kaynak deposundan
+              memnuniyetle kabul edilir. Bağımsız doğrulanmış FLOP Labs destek
+              adresi bulunmadığı için resmî bağış hedefi eklenmedi.
+            </p>
+            <div class="actions">
+              <a
+                class="button primary"
+                data-source-repo
+                href="https://github.com/flop-labs/technocore-sonnet-challenge"
+                >View source and contribute</a
+              >
+            </div>
+          </section>
+          <section id="sources">
+            <p class="kicker">Primary sources</p>
+            <h2 data-lang="en">Read the originals</h2>
+            <h2 data-lang="tr">Özgün kaynakları oku</h2>
+            <ul class="sources">
+              <li>
+                <a
+                  href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/LAUNCH.md"
+                  >Official launch notice</a
+                ><br /><span class="fine"
+                  >Pinned commit, manifest hash, referee DID, rooms,
+                  dates.</span
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/sonnet-game.md"
+                  >Official Sonnet rules</a
+                ><br /><span class="fine"
+                  >Eligibility, roles, teams, word state machine, poem,
+                  submission, voting, prizes.</span
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/contest.json"
+                  >Official contest configuration</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+                  >OWASP Content Security Policy guidance</a
+                >
+              </li>
+              <li>
+                <a href="https://web.dev/articles/optimize-long-tasks"
+                  >web.dev long-task performance guidance</a
+                >
+              </li>
+              <li>
+                <a href="https://vercel.com/docs/headers/cache-control-headers"
+                  >Vercel caching guidance</a
+                >
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>Sonnet Field Guide</strong><br />Independent · open ·
+          privacy-conscious
+        </div>
+        <nav>
+          <a href="/guide.html">Guide</a><a href="/teams.html">Teams</a
+          ><a href="https://github.com/flop-labs/technocore-sonnet-challenge"
+            >Official repo</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

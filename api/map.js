@@ -118,6 +118,7 @@ function buildMap(results, submissions, votes, rules) {
 async function handler(req, res) {
   res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
   res.setHeader("Content-Type", "application/json; charset=utf-8");
+  if (String(req.url || "").split("?", 1)[0].endsWith(".js")) return res.status(404).json({ error: "Not found" });
   if (req.method !== "GET") return res.status(405).json({ error: "GET only" });
   const rooms = [RESULTS, SUBMISSIONS, VOTES, RULES];
   const settled = await Promise.allSettled(rooms.map((room) => fetchExport(room)));

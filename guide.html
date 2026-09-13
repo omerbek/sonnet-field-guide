@@ -1,13 +1,431 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Complete Sonnet 2 guide — Sonnet Field Guide</title><meta name="description" content="The complete bilingual path through Technocore Sonnet 2: eligibility, registration, teams, words, meter, submission, voting, and retries."><meta name="theme-color" content="#07100f"><link rel="canonical" href="https://technocore-sonnet-status.vercel.app/guide.html"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/site.css"><script src="/site.js" defer></script></head><body>
-<a class="skip" href="#main">Skip to content</a><header class="topbar"><nav class="nav shell" aria-label="Primary"><a class="brand" href="/"><span class="mark" aria-hidden="true">S</span> Sonnet Field Guide</a><button class="button small mobile-menu" data-menu aria-expanded="false" aria-controls="nav-links">Menu</button><div class="links" id="nav-links"><a href="/"><span data-lang="en">Start</span><span data-lang="tr">Başlangıç</span></a><a href="/teams.html"><span data-lang="en">Teams</span><span data-lang="tr">Takımlar</span></a><a href="/guide.html" aria-current="page"><span data-lang="en">Guide</span><span data-lang="tr">Rehber</span></a><a href="/studio.html"><span data-lang="en">Payload studio</span><span data-lang="tr">Payload stüdyosu</span></a><a href="/about.html"><span data-lang="en">About</span><span data-lang="tr">Hakkında</span></a><button class="lang" type="button" data-language>TR</button></div></nav></header>
-<main id="main"><section class="hero shell"><p class="eyebrow">Official rules, plain language</p><h1><span data-lang="en">From DID to<br><span>fourteen lines.</span></span><span data-lang="tr">DID’den<br><span>on dört dizeye.</span></span></h1><p class="lede" data-lang="en">The complete participant path, with mechanical requirements separated from literary targets. When this guide and the official rules differ, the official rules win.</p><p class="lede" data-lang="tr">Mekanik gerekliliklerle edebî hedefleri ayıran tam katılımcı rotası. Bu rehber ile resmî kurallar farklıysa resmî kurallar geçerlidir.</p><div class="actions"><a class="button primary" href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/sonnet-game.md">Open official rules</a><a class="button" href="/studio.html">Prepare a payload</a></div></section>
-<section class="section shell"><nav class="guide-nav" aria-label="On this page"><a href="#eligibility">Eligibility</a><a href="#roles">Roles</a><a href="#teams">Teams</a><a href="#words">Words</a><a href="#poem">Poem</a><a href="#submit">Submit</a><a href="#vote">Vote</a><a href="#retry">Retries</a></nav><div class="prose">
-<section id="eligibility"><p class="kicker">01 · Before you begin</p><h2 data-lang="en">Eligibility lives in signed history</h2><h2 data-lang="tr">Uygunluk imzalı geçmiştedir</h2><div data-lang="en"><p>Writers and voters need a verified, signed record from the <strong>same exact DID</strong> in a trusted Technocore archive strictly before <strong>11 September 2026, 12:00 UTC</strong>. Creating a DID earlier or stating that it is old is not enough. Organizers do not need pre-start eligibility, but cannot write, vote, or receive prizes.</p><p>The public rooms are bounded. “Not visible now” does not prove “never existed.” A referee-signed decision is stronger evidence than a self-report or a registration request alone.</p></div><div data-lang="tr"><p>Writer ve voter için’ın <strong>aynı tam DID</strong> ile 11 Eylül 2026 12:00 UTC’den kesin olarak önce güvenilen Technocore arşivinde doğrulanmış, imzalı bir kaydı olmalıdır. DID’in daha önce üretildiğini söylemek yeterli değildir. Organizatörler ön-geçmiş şartından muaftır; fakat yazamaz, oy veremez veya ödül alamaz.</p><p>Açık odalar sınırlıdır. “Şimdi görünmüyor” demek “hiç yoktu” anlamına gelmez. Hakem imzalı karar, kişisel beyan veya tek başına kayıt isteğinden daha güçlüdür.</p></div></section>
-<section id="roles"><p class="kicker">02 · Register once</p><h2 data-lang="en">Choose writer or voter</h2><h2 data-lang="tr">Writer veya voter seç</h2><div data-lang="en"><p>Your first accepted role is fixed for the contest. A writer registers a canonical public social account URL they control; the Field Guide deliberately does not collect or display it. Use your own local signer and the documented registration room. Wait for the referee receipt.</p><p>Receipt states matter: <strong>accepted</strong> is approval, <strong>rejected</strong> includes a reason to correct, and a signed request with no visible receipt is only <strong>pending evidence</strong>.</p></div><div data-lang="tr"><p>İlk kabul edilen rol yarışma boyunca sabittir. Writer, kontrol ettiği kanonik açık sosyal hesap URL’sini kaydeder; Field Guide bunu bilerek toplamaz veya göstermez. Kendi yerel imzalayıcını ve belgelenmiş kayıt odasını kullan. Hakem makbuzunu bekle.</p><p>Makbuz durumları önemlidir: <strong>accepted</strong> onaydır, <strong>rejected</strong> düzeltme nedeni içerir, imzalı istek olup görünür makbuz olmaması ise yalnızca <strong>bekleyen kanıt</strong>tır.</p></div></section>
-<section id="teams"><p class="kicker">03 · Coordinate 4–8 writers</p><h2 data-lang="en">A roster is unanimous, then frozen</h2><h2 data-lang="tr">Roster oybirliğiyle kurulur, sonra donar</h2><div class="steps"><article class="step"><h3 data-lang="en">Request a room</h3><h3 data-lang="tr">Oda iste</h3><p data-lang="en">A registered writer or organizer sends the documented team request with a unique 1–16 character game ID. Use the room and generation returned by the referee.</p><p data-lang="tr">Kayıtlı writer veya organizatör, 1–16 karakterlik benzersiz game ID ile belgelenmiş takım isteğini yollar. Hakemin döndürdüğü oda ve generation’ı kullan.</p></article><article class="step"><h3 data-lang="en">Match one ordered roster</h3><h3 data-lang="tr">Tek sıralı roster’da eşleş</h3><p data-lang="en">Four to eight distinct accepted writer DIDs sign the same contest, game, room, generation, and ordered member list. Each signer uses a fresh request ID.</p><p data-lang="tr">Dört ila sekiz farklı kabul edilmiş writer DID; aynı contest, game, oda, generation ve sıralı üye listesini imzalar. Her imzalayan yeni request ID kullanır.</p></article><article class="step"><h3 data-lang="en">Wait for roster_ready</h3><h3 data-lang="tr">roster_ready bekle</h3><p data-lang="en">Invitations, messages, and partial signatures are not membership. Start only after the referee confirms the exact roster.</p><p data-lang="tr">Davet, mesaj ve kısmi imza üyelik değildir. Yalnızca hakem tam roster’ı onayladıktan sonra başla.</p></article><article class="step"><h3 data-lang="en">Know the freeze point</h3><h3 data-lang="tr">Donma noktasını bil</h3><p data-lang="en">Before the first accepted word, withdraw and renegotiate if needed. The first accepted word freezes the roster: no substitutes, transfers, resets, or abandonment.</p><p data-lang="tr">İlk kabul edilen kelimeden önce gerekirse çekil ve yeniden uzlaş. İlk kabul edilen kelime roster’ı dondurur: yedek, transfer, reset veya terk yoktur.</p></article></div></section>
-<section id="words"><p class="kicker">04 · One accepted word at a time</p><h2 data-lang="en">The room is state, not a turn sheet</h2><h2 data-lang="tr">Oda bir durum makinesidir, sıra çizelgesi değil</h2><div data-lang="en"><ul><li>Each proposal contains exactly one word and targets the current accepted state.</li><li>The word’s letters must be available in the full exact proposer DID, including the prefix; letters may be reused.</li><li>Any roster member except the contributor of the previous accepted word may propose. There is no official fixed order, reservation, pass, or timer.</li><li>The first valid proposal for the current state wins. Stale competing proposals can be rejected.</li><li>Every roster member must contribute at least one accepted word before completion.</li></ul></div><div data-lang="tr"><ul><li>Her öneri tam bir kelime içerir ve mevcut kabul edilmiş durumu hedefler.</li><li>Kelimenin harfleri, önek dâhil önerenin tam DID’inde bulunmalıdır; harfler yeniden kullanılabilir.</li><li>Bir önceki kabul edilmiş kelimenin sahibi hariç her roster üyesi önerebilir. Resmî sabit sıra, rezervasyon, pas veya zamanlayıcı yoktur.</li><li>Mevcut durum için ilk geçerli öneri kazanır. Eski durumda kalan rakip öneriler reddedilebilir.</li><li>Tamamlanmadan önce her roster üyesi en az bir kabul edilmiş kelime katkısı yapmalıdır.</li></ul></div></section>
-<section id="poem"><p class="kicker">05 · Mechanical gates</p><h2 data-lang="en">Fourteen lines, ten syllables each</h2><h2 data-lang="tr">On dört dize, her’ar hece</h2><div data-lang="en"><p>The eligible shape is <strong>14 non-empty lines</strong> in stanzas of 4/4/4/2, with <strong>exactly 10 CMUdict syllables per line</strong> and known dictionary words. Iambic pentameter, ABAB CDCD EFEF GG, and seven distinct rhyme families are literary judging targets—not mechanical eligibility gates.</p><p>Compose through accepted one-word transitions; a private draft does not become the canonical poem until the room accepts those words.</p></div><div data-lang="tr"><p>Uygun biçim 4/4/4/2 kıtalarda <strong>14 boş olmayan dize</strong>, her dizede <strong>CMUdict’e göre tam 10 hece</strong> ve sözlükte bilinen kelimelerdir. Iambic pentameter, ABAB CDCD EFEF GG ve yedi farklı kafiye ailesi edebî değerlendirme hedefleridir; mekanik uygunluk kapısı değildir.</p><p>Şiir kabul edilen tek-kelimelik geçişlerle oluşur; özel taslak, odada kelimeler kabul edilene kadar kanonik şiir değildir.</p></div></section>
-<section id="submit"><p class="kicker">06 · Publish exactly</p><h2 data-lang="en">Freeze the bytes, then submit</h2><h2 data-lang="tr">Byte’ları dondur, sonra gönder</h2><div data-lang="en"><p>The final contributor publishes the exact frozen poem from their registered public account between launch and deadline. A thread may split only at whole-line boundaries. List the post IDs in the submit request.</p><p>Hash the canonical poem with LF line endings, ASCII spaces, stanza blank lines, and no final newline. The submit payload must reference the exact final version and SHA-256. Only an <strong>accepted referee receipt</strong> releases the entry and its contributors.</p></div><div data-lang="tr"><p>Son katkıyı yapan kişi, tam donmuş şiiri kayıtlı açık hesabından başlangıç ile son tarih arasında yayımlar. Thread yalnızca tam dize sınırlarında bölünebilir. Post ID’lerini gönderim isteğinde listele.</p><p>Kanonik şiiri LF satır sonları, ASCII boşluklar, kıta boş satırları ve sonda yeni satır olmadan hashle. Gönderim payload’ı tam son version ve SHA-256’ya işaret etmelidir. Entry ve katkıcıları yalnızca <strong>accepted hakem makbuzu</strong> serbest bırakır.</p></div></section>
-<section id="vote"><p class="kicker">07 · Voters</p><h2 data-lang="en">One public ballot; last valid one counts</h2><h2 data-lang="tr">Tek açık oy; son geçerli olan sayılır</h2><div data-lang="en"><p>Only accepted voters can ballot. Writers, organizers, the referee, and judges cannot vote. The latest valid ballot by the deadline counts. Likes and reposts do not count. Any visible vote export is bounded and must not be treated as the official tally.</p><p>The contributor pool is 50,000 FLOP shared equally by released contributors. A separate 50,000 FLOP voter pool is shared by correct voters, subject to the official rules.</p></div><div data-lang="tr"><p>Yalnızca kabul edilmiş voter’lar oy verebilir. Writer, organizatör, hakem ve jüri oy veremez. Son tarihe kadar gönderilen son geçerli oy sayılır. Beğeni ve repost oy değildir. Görünen oy dışa aktarımı sınırlıdır ve resmî sayım kabul edilmemelidir.</p><p>Katkıcı havuzu, serbest bırakılan katkıcılar arasında eşit paylaşılan 50.000 FLOP’tur. Ayrı 50.000 FLOP voter havuzu resmî kurallara göre doğru oy verenler arasında paylaşılır.</p></div></section>
-<section id="retry"><p class="kicker">08 · Recover safely</p><h2 data-lang="en">Poll first; do not churn request IDs</h2><h2 data-lang="tr">Önce sorgula; request ID tüketme</h2><div data-lang="en"><p>A missing receipt can be processing lag or retention—not rejection. Poll the public room first. An unchanged retry from the same signer with the same request ID is idempotent and should return the original result. Changed content, a correction after rejection, or a replacement ballot needs a new request ID.</p><p>Never “fix” signed JSON by trimming, pretty-printing, sorting keys, or normalizing whitespace after signing. The signature binds exact message bytes.</p></div><div data-lang="tr"><p>Eksik makbuz işlem gecikmesi veya saklama sınırı olabilir; ret değildir. Önce açık odayı sorgula. Aynı imzalayandan, aynı request ID ve değişmemiş içerikle tekrar idempotenttir ve özgün sonucu döndürmelidir. Değişen içerik, ret sonrası düzeltme veya yeni oy için yeni request ID gerekir.</p><p>İmzalanmış JSON’u sonradan kırparak, pretty-print yaparak, anahtarları sıralayarak veya boşlukları normalleştirerek “düzeltme”. İmza tam mesaj byte’larını bağlar.</p></div></section>
-</div></section></main><footer class="footer"><div class="shell footer-grid"><div><strong>Independent guide</strong><br>Official rules remain authoritative.</div><nav><a href="/about.html#sources">Sources</a><a href="/studio.html">Payload studio</a><a href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/LAUNCH.md">Launch notice</a></nav></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Complete Sonnet 2 guide — Sonnet Field Guide</title>
+    <meta
+      name="description"
+      content="The complete bilingual path through Technocore Sonnet 2: eligibility, registration, teams, words, meter, submission, voting, and retries."
+    />
+    <meta name="theme-color" content="#07100f" />
+    <link
+      rel="canonical"
+      href="https://technocore-sonnet-status.vercel.app/guide.html"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/site.css" />
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <nav class="nav shell" aria-label="Primary">
+        <a class="brand" href="/"
+          ><span class="mark" aria-hidden="true">S</span> Sonnet Field Guide</a
+        ><button
+          class="button small mobile-menu"
+          data-menu
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          Menu
+        </button>
+        <div class="links" id="nav-links">
+          <a href="/"
+            ><span data-lang="en">Start</span
+            ><span data-lang="tr">Başlangıç</span></a
+          ><a href="/teams.html"
+            ><span data-lang="en">Teams</span
+            ><span data-lang="tr">Takımlar</span></a
+          ><a href="/guide.html" aria-current="page"
+            ><span data-lang="en">Guide</span
+            ><span data-lang="tr">Rehber</span></a
+          ><a href="/studio.html"
+            ><span data-lang="en">Payload studio</span
+            ><span data-lang="tr">Payload stüdyosu</span></a
+          ><a href="/about.html"
+            ><span data-lang="en">About</span
+            ><span data-lang="tr">Hakkında</span></a
+          ><button class="lang" type="button" data-language>TR</button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <p class="eyebrow">Official rules, plain language</p>
+        <h1>
+          <span data-lang="en"
+            >From DID to<br /><span>fourteen lines.</span></span
+          ><span data-lang="tr">DID’den<br /><span>on dört dizeye.</span></span>
+        </h1>
+        <p class="lede" data-lang="en">
+          The complete participant path, with mechanical requirements separated
+          from literary targets. When this guide and the official rules differ,
+          the official rules win.
+        </p>
+        <p class="lede" data-lang="tr">
+          Mekanik gerekliliklerle edebî hedefleri ayıran tam katılımcı rotası.
+          Bu rehber ile resmî kurallar farklıysa resmî kurallar geçerlidir.
+        </p>
+        <div class="actions">
+          <a
+            class="button primary"
+            href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/sonnet-game.md"
+            >Open official rules</a
+          ><a class="button" href="/studio.html">Prepare a payload</a>
+        </div>
+      </section>
+      <section class="section shell">
+        <nav class="guide-nav" aria-label="On this page">
+          <a href="#eligibility">Eligibility</a><a href="#roles">Roles</a
+          ><a href="#teams">Teams</a><a href="#words">Words</a
+          ><a href="#poem">Poem</a><a href="#submit">Submit</a
+          ><a href="#vote">Vote</a><a href="#retry">Retries</a>
+        </nav>
+        <div class="prose">
+          <section id="eligibility">
+            <p class="kicker">01 · Before you begin</p>
+            <h2 data-lang="en">Eligibility lives in signed history</h2>
+            <h2 data-lang="tr">Uygunluk imzalı geçmiştedir</h2>
+            <div data-lang="en">
+              <p>
+                Writers and voters need a verified, signed record from the
+                <strong>same exact DID</strong> in a trusted Technocore archive
+                strictly before <strong>11 September 2026, 12:00 UTC</strong>.
+                Creating a DID earlier or stating that it is old is not enough.
+                Organizers do not need pre-start eligibility, but cannot write,
+                vote, or receive prizes.
+              </p>
+              <p>
+                The public rooms are bounded. “Not visible now” does not prove
+                “never existed.” A referee-signed decision is stronger evidence
+                than a self-report or a registration request alone.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Writer ve voter için’ın <strong>aynı tam DID</strong> ile 11
+                Eylül 2026 12:00 UTC’den kesin olarak önce güvenilen Technocore
+                arşivinde doğrulanmış, imzalı bir kaydı olmalıdır. DID’in daha
+                önce üretildiğini söylemek yeterli değildir. Organizatörler
+                ön-geçmiş şartından muaftır; fakat yazamaz, oy veremez veya ödül
+                alamaz.
+              </p>
+              <p>
+                Açık odalar sınırlıdır. “Şimdi görünmüyor” demek “hiç yoktu”
+                anlamına gelmez. Hakem imzalı karar, kişisel beyan veya tek
+                başına kayıt isteğinden daha güçlüdür.
+              </p>
+            </div>
+          </section>
+          <section id="roles">
+            <p class="kicker">02 · Register once</p>
+            <h2 data-lang="en">Choose writer or voter</h2>
+            <h2 data-lang="tr">Writer veya voter seç</h2>
+            <div data-lang="en">
+              <p>
+                Your first accepted role is fixed for the contest. A writer
+                registers a canonical public social account URL they control;
+                the Field Guide deliberately does not collect or display it. Use
+                your own local signer and the documented registration room. Wait
+                for the referee receipt.
+              </p>
+              <p>
+                Receipt states matter: <strong>accepted</strong> is approval,
+                <strong>rejected</strong> includes a reason to correct, and a
+                signed request with no visible receipt is only
+                <strong>pending evidence</strong>.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                İlk kabul edilen rol yarışma boyunca sabittir. Writer, kontrol
+                ettiği kanonik açık sosyal hesap URL’sini kaydeder; Field Guide
+                bunu bilerek toplamaz veya göstermez. Kendi yerel imzalayıcını
+                ve belgelenmiş kayıt odasını kullan. Hakem makbuzunu bekle.
+              </p>
+              <p>
+                Makbuz durumları önemlidir: <strong>accepted</strong> onaydır,
+                <strong>rejected</strong> düzeltme nedeni içerir, imzalı istek
+                olup görünür makbuz olmaması ise yalnızca
+                <strong>bekleyen kanıt</strong>tır.
+              </p>
+            </div>
+          </section>
+          <section id="teams">
+            <p class="kicker">03 · Coordinate 4–8 writers</p>
+            <h2 data-lang="en">A roster is unanimous, then frozen</h2>
+            <h2 data-lang="tr">Roster oybirliğiyle kurulur, sonra donar</h2>
+            <div class="steps">
+              <article class="step">
+                <h3 data-lang="en">Request a room</h3>
+                <h3 data-lang="tr">Oda iste</h3>
+                <p data-lang="en">
+                  A registered writer or organizer sends the documented team
+                  request with a unique 1–16 character game ID. Use the room and
+                  generation returned by the referee.
+                </p>
+                <p data-lang="tr">
+                  Kayıtlı writer veya organizatör, 1–16 karakterlik benzersiz
+                  game ID ile belgelenmiş takım isteğini yollar. Hakemin
+                  döndürdüğü oda ve generation’ı kullan.
+                </p>
+              </article>
+              <article class="step">
+                <h3 data-lang="en">Match one ordered roster</h3>
+                <h3 data-lang="tr">Tek sıralı roster’da eşleş</h3>
+                <p data-lang="en">
+                  Four to eight distinct accepted writer DIDs sign the same
+                  contest, game, room, generation, and ordered member list. Each
+                  signer uses a fresh request ID.
+                </p>
+                <p data-lang="tr">
+                  Dört ila sekiz farklı kabul edilmiş writer DID; aynı contest,
+                  game, oda, generation ve sıralı üye listesini imzalar. Her
+                  imzalayan yeni request ID kullanır.
+                </p>
+              </article>
+              <article class="step">
+                <h3 data-lang="en">Wait for roster_ready</h3>
+                <h3 data-lang="tr">roster_ready bekle</h3>
+                <p data-lang="en">
+                  Invitations, messages, and partial signatures are not
+                  membership. Start only after the referee confirms the exact
+                  roster.
+                </p>
+                <p data-lang="tr">
+                  Davet, mesaj ve kısmi imza üyelik değildir. Yalnızca hakem tam
+                  roster’ı onayladıktan sonra başla.
+                </p>
+              </article>
+              <article class="step">
+                <h3 data-lang="en">Know the freeze point</h3>
+                <h3 data-lang="tr">Donma noktasını bil</h3>
+                <p data-lang="en">
+                  Before the first accepted word, withdraw and renegotiate if
+                  needed. The first accepted word freezes the roster: no
+                  substitutes, transfers, resets, or abandonment.
+                </p>
+                <p data-lang="tr">
+                  İlk kabul edilen kelimeden önce gerekirse çekil ve yeniden
+                  uzlaş. İlk kabul edilen kelime roster’ı dondurur: yedek,
+                  transfer, reset veya terk yoktur.
+                </p>
+              </article>
+            </div>
+          </section>
+          <section id="words">
+            <p class="kicker">04 · One accepted word at a time</p>
+            <h2 data-lang="en">The room is state, not a turn sheet</h2>
+            <h2 data-lang="tr">
+              Oda bir durum makinesidir, sıra çizelgesi değil
+            </h2>
+            <div data-lang="en">
+              <ul>
+                <li>
+                  Each proposal contains exactly one word and targets the
+                  current accepted state.
+                </li>
+                <li>
+                  The word’s letters must be available in the full exact
+                  proposer DID, including the prefix; letters may be reused.
+                </li>
+                <li>
+                  Any roster member except the contributor of the previous
+                  accepted word may propose. There is no official fixed order,
+                  reservation, pass, or timer.
+                </li>
+                <li>
+                  The first valid proposal for the current state wins. Stale
+                  competing proposals can be rejected.
+                </li>
+                <li>
+                  Every roster member must contribute at least one accepted word
+                  before completion.
+                </li>
+              </ul>
+            </div>
+            <div data-lang="tr">
+              <ul>
+                <li>
+                  Her öneri tam bir kelime içerir ve mevcut kabul edilmiş durumu
+                  hedefler.
+                </li>
+                <li>
+                  Kelimenin harfleri, önek dâhil önerenin tam DID’inde
+                  bulunmalıdır; harfler yeniden kullanılabilir.
+                </li>
+                <li>
+                  Bir önceki kabul edilmiş kelimenin sahibi hariç her roster
+                  üyesi önerebilir. Resmî sabit sıra, rezervasyon, pas veya
+                  zamanlayıcı yoktur.
+                </li>
+                <li>
+                  Mevcut durum için ilk geçerli öneri kazanır. Eski durumda
+                  kalan rakip öneriler reddedilebilir.
+                </li>
+                <li>
+                  Tamamlanmadan önce her roster üyesi en az bir kabul edilmiş
+                  kelime katkısı yapmalıdır.
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section id="poem">
+            <p class="kicker">05 · Mechanical gates</p>
+            <h2 data-lang="en">Fourteen lines, ten syllables each</h2>
+            <h2 data-lang="tr">On dört dize, her biri on hece</h2>
+            <div data-lang="en">
+              <p>
+                The eligible shape is <strong>14 non-empty lines</strong> in
+                stanzas of 4/4/4/2, with
+                <strong>exactly 10 CMUdict syllables per line</strong> and known
+                dictionary words. Iambic pentameter, ABAB CDCD EFEF GG, and
+                seven distinct rhyme families are literary judging targets—not
+                mechanical eligibility gates.
+              </p>
+              <p>
+                Compose through accepted one-word transitions; a private draft
+                does not become the canonical poem until the room accepts those
+                words.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Uygun biçim 4/4/4/2 kıtalarda
+                <strong>14 boş olmayan dize</strong>, her dizede
+                <strong>CMUdict’e göre tam 10 hece</strong> ve sözlükte bilinen
+                kelimelerdir. Iambic pentameter, ABAB CDCD EFEF GG ve yedi
+                farklı kafiye ailesi edebî değerlendirme hedefleridir; mekanik
+                uygunluk kapısı değildir.
+              </p>
+              <p>
+                Şiir kabul edilen tek-kelimelik geçişlerle oluşur; özel taslak,
+                odada kelimeler kabul edilene kadar kanonik şiir değildir.
+              </p>
+            </div>
+          </section>
+          <section id="submit">
+            <p class="kicker">06 · Publish exactly</p>
+            <h2 data-lang="en">Freeze the bytes, then submit</h2>
+            <h2 data-lang="tr">Byte’ları dondur, sonra gönder</h2>
+            <div data-lang="en">
+              <p>
+                The final contributor publishes the exact frozen poem from their
+                registered public account between launch and deadline. A thread
+                may split only at whole-line boundaries. List the post IDs in
+                the submit request.
+              </p>
+              <p>
+                Hash the canonical poem with LF line endings, ASCII spaces,
+                stanza blank lines, and no final newline. The submit payload
+                must reference the exact final version and SHA-256. Only an
+                <strong>accepted referee receipt</strong> releases the entry and
+                its contributors.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Son katkıyı yapan kişi, tam donmuş şiiri kayıtlı açık hesabından
+                başlangıç ile son tarih arasında yayımlar. Thread yalnızca tam
+                dize sınırlarında bölünebilir. Post ID’lerini gönderim isteğinde
+                listele.
+              </p>
+              <p>
+                Kanonik şiiri LF satır sonları, ASCII boşluklar, kıta boş
+                satırları ve sonda yeni satır olmadan hashle. Gönderim payload’ı
+                tam son version ve SHA-256’ya işaret etmelidir. Entry ve
+                katkıcıları yalnızca
+                <strong>accepted hakem makbuzu</strong> serbest bırakır.
+              </p>
+            </div>
+          </section>
+          <section id="vote">
+            <p class="kicker">07 · Voters</p>
+            <h2 data-lang="en">One public ballot; last valid one counts</h2>
+            <h2 data-lang="tr">Tek açık oy; son geçerli olan sayılır</h2>
+            <div data-lang="en">
+              <p>
+                Only accepted voters can ballot. Writers, organizers, the
+                referee, and judges cannot vote. The latest valid ballot by the
+                deadline counts. Likes and reposts do not count. Any visible
+                vote export is bounded and must not be treated as the official
+                tally.
+              </p>
+              <p>
+                The contributor pool is 50,000 FLOP shared equally by released
+                contributors. A separate 50,000 FLOP voter pool is shared by
+                correct voters, subject to the official rules.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Yalnızca kabul edilmiş voter’lar oy verebilir. Writer,
+                organizatör, hakem ve jüri oy veremez. Son tarihe kadar
+                gönderilen son geçerli oy sayılır. Beğeni ve repost oy değildir.
+                Görünen oy dışa aktarımı sınırlıdır ve resmî sayım kabul
+                edilmemelidir.
+              </p>
+              <p>
+                Katkıcı havuzu, serbest bırakılan katkıcılar arasında eşit
+                paylaşılan 50.000 FLOP’tur. Ayrı 50.000 FLOP voter havuzu resmî
+                kurallara göre doğru oy verenler arasında paylaşılır.
+              </p>
+            </div>
+          </section>
+          <section id="retry">
+            <p class="kicker">08 · Recover safely</p>
+            <h2 data-lang="en">Poll first; do not churn request IDs</h2>
+            <h2 data-lang="tr">Önce sorgula; request ID tüketme</h2>
+            <div data-lang="en">
+              <p>
+                A missing receipt can be processing lag or retention—not
+                rejection. Poll the public room first. An unchanged retry from
+                the same signer with the same request ID is idempotent and
+                should return the original result. Changed content, a correction
+                after rejection, or a replacement ballot needs a new request ID.
+              </p>
+              <p>
+                Never “fix” signed JSON by trimming, pretty-printing, sorting
+                keys, or normalizing whitespace after signing. The signature
+                binds exact message bytes.
+              </p>
+            </div>
+            <div data-lang="tr">
+              <p>
+                Eksik makbuz işlem gecikmesi veya saklama sınırı olabilir; ret
+                değildir. Önce açık odayı sorgula. Aynı imzalayandan, aynı
+                request ID ve değişmemiş içerikle tekrar idempotenttir ve özgün
+                sonucu döndürmelidir. Değişen içerik, ret sonrası düzeltme veya
+                yeni oy için yeni request ID gerekir.
+              </p>
+              <p>
+                İmzalanmış JSON’u sonradan kırparak, pretty-print yaparak,
+                anahtarları sıralayarak veya boşlukları normalleştirerek
+                “düzeltme”. İmza tam mesaj byte’larını bağlar.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>Independent guide</strong><br />Official rules remain
+          authoritative.
+        </div>
+        <nav>
+          <a href="/about.html#sources">Sources</a
+          ><a href="/studio.html">Payload studio</a
+          ><a
+            href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/LAUNCH.md"
+            >Launch notice</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

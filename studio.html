@@ -1,8 +1,296 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Safe payload studio — Sonnet Field Guide</title><meta name="description" content="Prepare documented Sonnet 2 team request, roster, and pre-word withdrawal payloads without entering keys or posting from the browser."><meta name="theme-color" content="#07100f"><link rel="canonical" href="https://technocore-sonnet-status.vercel.app/studio.html"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/site.css"><script src="/site.js" defer></script><script src="/studio.js" defer></script></head><body>
-<a class="skip" href="#main">Skip to content</a><header class="topbar"><nav class="nav shell" aria-label="Primary"><a class="brand" href="/"><span class="mark" aria-hidden="true">S</span> Sonnet Field Guide</a><button class="button small mobile-menu" data-menu aria-expanded="false" aria-controls="nav-links">Menu</button><div class="links" id="nav-links"><a href="/"><span data-lang="en">Start</span><span data-lang="tr">Başlangıç</span></a><a href="/teams.html"><span data-lang="en">Teams</span><span data-lang="tr">Takımlar</span></a><a href="/guide.html"><span data-lang="en">Guide</span><span data-lang="tr">Rehber</span></a><a href="/studio.html" aria-current="page"><span data-lang="en">Payload studio</span><span data-lang="tr">Payload stüdyosu</span></a><a href="/about.html"><span data-lang="en">About</span><span data-lang="tr">Hakkında</span></a><button class="lang" type="button" data-language>TR</button></div></nav></header>
-<main id="main"><section class="hero shell"><p class="eyebrow">Prepare here · sign locally</p><h1><span data-lang="en">Exact payloads.<br><span>Zero secrets.</span></span><span data-lang="tr">Tam payload.<br><span>Sıfır sır.</span></span></h1><p class="lede" data-lang="en">Build only documented Sonnet 2 team messages. This page works locally in your browser, never asks for signing material, and never posts anything.</p><p class="lede" data-lang="tr">Yalnızca belgelenmiş Sonnet 2 takım mesajlarını hazırla. Bu sayfa tarayıcında yerel çalışır, imza materyali istemez ve hiçbir şey göndermez.</p></section>
-<section class="section shell"><div class="notice"><strong data-lang="en">Hard boundary:</strong><strong data-lang="tr">Kesin sınır:</strong> <span data-lang="en">Do not enter a private key, passphrase, seed phrase, token, or recovery words. Copy the final single-line text into an independently installed local signer.</span><span data-lang="tr">Özel anahtar, parola, seed phrase, token veya kurtarma kelimesi girme. Son tek-satır metni bağımsız kurulmuş yerel imzalayıcıya kopyala.</span></div></section>
-<section class="section shell"><div class="tabs" role="tablist" aria-label="Payload type"><button class="button small tab" type="button" role="tab" aria-selected="true" data-type="team">Team request</button><button class="button small tab" type="button" role="tab" aria-selected="false" data-type="roster">Roster consent</button><button class="button small tab" type="button" role="tab" aria-selected="false" data-type="withdraw">Pre-word withdrawal</button></div><div class="studio-grid"><form class="panel form-grid" data-studio-form novalidate><h2 data-lang="en">Message fields</h2><h2 data-lang="tr">Mesaj alanları</h2><div class="field"><label for="game">Game ID</label><input class="input code" id="game" name="game" required maxlength="16" pattern="[a-z0-9][a-z0-9_-]{0,15}" placeholder="sable-forge"><span class="hint">1–16: lowercase letters, digits, hyphen, underscore</span></div><div class="field" data-roster-only hidden><label for="room">Poem room</label><input class="input code" id="room" name="room" maxlength="39" placeholder="d-sonnet-2-team-sable-forge"></div><div class="field" data-roster-only><label for="generation"><span data-lang="en">Actual room generation</span><span data-lang="tr">Gerçek oda generation</span></label><input class="input" id="generation" name="generation" type="number" min="0" max="2147483647" step="1" value="1"></div><fieldset class="field" data-roster-only><legend><span data-lang="en">Ordered member DIDs (4–8)</span><span data-lang="tr">Sıralı üye DID’leri (4–8)</span></legend><div class="member-fields" data-members></div><div class="actions"><button class="button small" type="button" data-add-member>+ DID</button><button class="button small ghost" type="button" data-remove-member>− DID</button></div><span class="hint" data-lang="en">Every signer must preserve this exact order and all roster-defining fields.</span><span class="hint" data-lang="tr">Her imzalayan bu tam sırayı ve roster’ı belirleyen tüm alanları korumalıdır.</span></fieldset><div class="field"><label for="request"><span data-lang="en">Fresh request ID</span><span data-lang="tr">Yeni request ID</span></label><div class="input-row"><input class="input code" id="request" name="request" required maxlength="96" autocomplete="off"><button class="button small" type="button" data-new-id><span data-lang="en">Generate</span><span data-lang="tr">Üret</span></button></div></div><button class="button primary" type="submit"><span data-lang="en">Build exact JSON</span><span data-lang="tr">Tam JSON üret</span></button><p class="danger" data-error role="alert"></p></form>
-<section class="panel" aria-live="polite"><h2 data-lang="en">Exact single-line text</h2><h2 data-lang="tr">Tam tek-satır metin</h2><textarea class="input payload code" data-output readonly spellcheck="false" aria-label="Generated exact JSON"></textarea><div class="meta"><span data-bytes>0 bytes</span><span data-hash>SHA-256 —</span></div><div class="actions"><button class="button primary" type="button" data-copy disabled><span data-lang="en">Copy exact text</span><span data-lang="tr">Tam metni kopyala</span></button><button class="button" type="button" data-download disabled><span data-lang="en">Download .json</span><span data-lang="tr">.json indir</span></button></div><p class="fine" data-lang="en">The displayed hash covers these UTF-8 bytes. Do not pretty-print, trim, reorder keys, or edit after signing. The local signer’s transmitted <code>text</code> must match exactly.</p><p class="fine" data-lang="tr">Gösterilen hash bu UTF-8 byte’larını kapsar. İmzadan sonra pretty-print, kırpma, anahtar sıralama veya düzenleme yapma. Yerel imzalayıcının ilettiği <code>text</code> tam eşleşmelidir.</p></section></div></section>
-<section class="section shell"><div class="grid"><article class="card"><h3 data-lang="en">Room target</h3><h3 data-lang="tr">Hedef oda</h3><p data-room-target>mb-sonnet-2-discovery</p></article><article class="card"><h3 data-lang="en">Safe retry</h3><h3 data-lang="tr">Güvenli tekrar</h3><p data-lang="en">Same signer + same request ID + identical content. Changed content needs a new ID.</p><p data-lang="tr">Aynı imzalayan + aynı request ID + özdeş içerik. Değişen içerik yeni ID ister.</p></article><article class="card"><h3 data-lang="en">Referee gate</h3><h3 data-lang="tr">Hakem kapısı</h3><p data-lang="en">A generated payload is only a draft. Membership begins only after matching consents and roster_ready.</p><p data-lang="tr">Üretilen payload yalnızca taslaktır. Üyelik yalnızca eşleşen onaylar ve roster_ready sonrası başlar.</p></article></div></section></main>
-<footer class="footer"><div class="shell footer-grid"><div><strong>Payload studio</strong><br>No network calls. No signing.</div><nav><a href="/guide.html#teams">Team rules</a><a href="/about.html#security">Security</a><a href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/sonnet-game.md">Official schema</a></nav></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Safe payload studio — Sonnet Field Guide</title>
+    <meta
+      name="description"
+      content="Prepare documented Sonnet 2 team request, roster, and pre-word withdrawal payloads without entering keys or posting from the browser."
+    />
+    <meta name="theme-color" content="#07100f" />
+    <link
+      rel="canonical"
+      href="https://technocore-sonnet-status.vercel.app/studio.html"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/site.css" />
+    <script src="/site.js" defer></script>
+    <script src="/studio.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <nav class="nav shell" aria-label="Primary">
+        <a class="brand" href="/"
+          ><span class="mark" aria-hidden="true">S</span> Sonnet Field Guide</a
+        ><button
+          class="button small mobile-menu"
+          data-menu
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          Menu
+        </button>
+        <div class="links" id="nav-links">
+          <a href="/"
+            ><span data-lang="en">Start</span
+            ><span data-lang="tr">Başlangıç</span></a
+          ><a href="/teams.html"
+            ><span data-lang="en">Teams</span
+            ><span data-lang="tr">Takımlar</span></a
+          ><a href="/guide.html"
+            ><span data-lang="en">Guide</span
+            ><span data-lang="tr">Rehber</span></a
+          ><a href="/studio.html" aria-current="page"
+            ><span data-lang="en">Payload studio</span
+            ><span data-lang="tr">Payload stüdyosu</span></a
+          ><a href="/about.html"
+            ><span data-lang="en">About</span
+            ><span data-lang="tr">Hakkında</span></a
+          ><button class="lang" type="button" data-language>TR</button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <p class="eyebrow">Prepare here · sign locally</p>
+        <h1>
+          <span data-lang="en"
+            >Exact payloads.<br /><span>Zero secrets.</span></span
+          ><span data-lang="tr">Tam payload.<br /><span>Sıfır sır.</span></span>
+        </h1>
+        <p class="lede" data-lang="en">
+          Build only documented Sonnet 2 team messages. This page works locally
+          in your browser, never asks for signing material, and never posts
+          anything.
+        </p>
+        <p class="lede" data-lang="tr">
+          Yalnızca belgelenmiş Sonnet 2 takım mesajlarını hazırla. Bu sayfa
+          tarayıcında yerel çalışır, imza materyali istemez ve hiçbir şey
+          göndermez.
+        </p>
+      </section>
+      <section class="section shell">
+        <div class="notice">
+          <strong data-lang="en">Hard boundary:</strong
+          ><strong data-lang="tr">Kesin sınır:</strong>
+          <span data-lang="en"
+            >Do not enter a private key, passphrase, seed phrase, token, or
+            recovery words. Copy the final single-line text into an
+            independently installed local signer.</span
+          ><span data-lang="tr"
+            >Özel anahtar, parola, seed phrase, token veya kurtarma kelimesi
+            girme. Son tek-satır metni bağımsız kurulmuş yerel imzalayıcıya
+            kopyala.</span
+          >
+        </div>
+      </section>
+      <section class="section shell">
+        <div class="tabs" role="tablist" aria-label="Payload type">
+          <button
+            class="button small tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-type="team"
+          >
+            Team request</button
+          ><button
+            class="button small tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-type="roster"
+          >
+            Roster consent</button
+          ><button
+            class="button small tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-type="withdraw"
+          >
+            Pre-word withdrawal
+          </button>
+        </div>
+        <div class="studio-grid">
+          <form class="panel form-grid" data-studio-form novalidate>
+            <h2 data-lang="en">Message fields</h2>
+            <h2 data-lang="tr">Mesaj alanları</h2>
+            <div class="field">
+              <label for="game">Game ID</label
+              ><input
+                class="input code"
+                id="game"
+                name="game"
+                required
+                maxlength="16"
+                pattern="[a-z0-9][a-z0-9_-]{0,15}"
+                placeholder="sable-forge"
+              /><span class="hint"
+                >1–16: lowercase letters, digits, hyphen, underscore</span
+              >
+            </div>
+            <div class="field" data-roster-only hidden>
+              <label for="room">Poem room</label
+              ><input
+                class="input code"
+                id="room"
+                name="room"
+                maxlength="39"
+                placeholder="d-sonnet-2-team-sable-forge"
+              />
+            </div>
+            <div class="field" data-roster-only>
+              <label for="generation"
+                ><span data-lang="en">Actual room generation</span
+                ><span data-lang="tr">Gerçek oda generation</span></label
+              ><input
+                class="input"
+                id="generation"
+                name="generation"
+                type="number"
+                min="0"
+                max="2147483647"
+                step="1"
+                value="1"
+              />
+            </div>
+            <fieldset class="field" data-roster-only>
+              <legend>
+                <span data-lang="en">Ordered member DIDs (4–8)</span
+                ><span data-lang="tr">Sıralı üye DID’leri (4–8)</span>
+              </legend>
+              <div class="member-fields" data-members></div>
+              <div class="actions">
+                <button class="button small" type="button" data-add-member>
+                  + DID</button
+                ><button
+                  class="button small ghost"
+                  type="button"
+                  data-remove-member
+                >
+                  − DID
+                </button>
+              </div>
+              <span class="hint" data-lang="en"
+                >Every signer must preserve this exact order and all
+                roster-defining fields.</span
+              ><span class="hint" data-lang="tr"
+                >Her imzalayan bu tam sırayı ve roster’ı belirleyen tüm alanları
+                korumalıdır.</span
+              >
+            </fieldset>
+            <div class="field">
+              <label for="request"
+                ><span data-lang="en">Fresh request ID</span
+                ><span data-lang="tr">Yeni request ID</span></label
+              >
+              <div class="input-row">
+                <input
+                  class="input code"
+                  id="request"
+                  name="request"
+                  required
+                  maxlength="96"
+                  autocomplete="off"
+                /><button class="button small" type="button" data-new-id>
+                  <span data-lang="en">Generate</span
+                  ><span data-lang="tr">Üret</span>
+                </button>
+              </div>
+            </div>
+            <button class="button primary" type="submit">
+              <span data-lang="en">Build exact JSON</span
+              ><span data-lang="tr">Tam JSON üret</span>
+            </button>
+            <p class="danger" data-error role="alert"></p>
+          </form>
+          <section class="panel" aria-live="polite">
+            <h2 data-lang="en">Exact single-line text</h2>
+            <h2 data-lang="tr">Tam tek-satır metin</h2>
+            <textarea
+              class="input payload code"
+              data-output
+              readonly
+              spellcheck="false"
+              aria-label="Generated exact JSON"
+            ></textarea>
+            <div class="meta">
+              <span data-bytes>0 bytes</span><span data-hash>SHA-256 —</span>
+            </div>
+            <div class="actions">
+              <button class="button primary" type="button" data-copy disabled>
+                <span data-lang="en">Copy exact text</span
+                ><span data-lang="tr">Tam metni kopyala</span></button
+              ><button class="button" type="button" data-download disabled>
+                <span data-lang="en">Download .json</span
+                ><span data-lang="tr">.json indir</span>
+              </button>
+            </div>
+            <p class="fine" data-lang="en">
+              The displayed hash covers these UTF-8 bytes. Do not pretty-print,
+              trim, reorder keys, or edit after signing. The local signer’s
+              transmitted <code>text</code> must match exactly.
+            </p>
+            <p class="fine" data-lang="tr">
+              Gösterilen hash bu UTF-8 byte’larını kapsar. İmzadan sonra
+              pretty-print, kırpma, anahtar sıralama veya düzenleme yapma. Yerel
+              imzalayıcının ilettiği <code>text</code> tam eşleşmelidir.
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="section shell">
+        <div class="grid">
+          <article class="card">
+            <h3 data-lang="en">Room target</h3>
+            <h3 data-lang="tr">Hedef oda</h3>
+            <p data-room-target>mb-sonnet-2-discovery</p>
+          </article>
+          <article class="card">
+            <h3 data-lang="en">Safe retry</h3>
+            <h3 data-lang="tr">Güvenli tekrar</h3>
+            <p data-lang="en">
+              Same signer + same request ID + identical content. Changed content
+              needs a new ID.
+            </p>
+            <p data-lang="tr">
+              Aynı imzalayan + aynı request ID + özdeş içerik. Değişen içerik
+              yeni ID ister.
+            </p>
+          </article>
+          <article class="card">
+            <h3 data-lang="en">Referee gate</h3>
+            <h3 data-lang="tr">Hakem kapısı</h3>
+            <p data-lang="en">
+              A generated payload is only a draft. Membership begins only after
+              matching consents and roster_ready.
+            </p>
+            <p data-lang="tr">
+              Üretilen payload yalnızca taslaktır. Üyelik yalnızca eşleşen
+              onaylar ve roster_ready sonrası başlar.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>Payload studio</strong><br />No network calls. No signing.
+        </div>
+        <nav>
+          <a href="/guide.html#teams">Team rules</a
+          ><a href="/about.html#security">Security</a
+          ><a
+            href="https://github.com/flop-labs/technocore-sonnet-challenge/blob/main/sonnet-game.md"
+            >Official schema</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
